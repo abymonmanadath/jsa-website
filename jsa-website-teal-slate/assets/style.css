@@ -34,8 +34,10 @@ section{padding:76px 0}
 .topbar{background:var(--ink);color:#cdd5e2;font-size:.82rem}
 .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;padding-top:9px;padding-bottom:9px;flex-wrap:wrap}
 .topbar a{color:#cdd5e2}.topbar a:hover{color:#fff}
+.topbar .tb-l{display:inline-flex;align-items:center;gap:7px}
 .topbar .tb-r{display:flex;gap:18px;flex-wrap:wrap}
 .topbar .tb-r span{display:inline-flex;align-items:center;gap:6px}
+.topbar svg{width:15px;height:15px;flex:none;fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 /* Header */
 header.site{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);
   border-bottom:1px solid var(--line);transition:.25s}
@@ -100,7 +102,7 @@ header.site.small{box-shadow:var(--shadow-sm)}
 .svc-body h3{font-size:1.12rem;margin-bottom:.5rem}
 .svc-body p{color:var(--muted);font-size:.93rem;margin-bottom:1.1rem;flex:1}
 .svc-more{font-weight:700;font-size:.9rem;color:var(--brand);display:inline-flex;align-items:center;gap:6px}
-.svc-more svg{width:16px;height:16px;transition:.2s}
+.svc-more svg{width:16px;height:16px;transition:.2s;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .svc-card:hover .svc-more svg{transform:translateX(4px)}
 /* Why choose */
 .why{background:var(--soft)}
@@ -184,7 +186,8 @@ aside .card h4{font-size:1.02rem;margin-bottom:14px}
 .leader h2{font-size:1.7rem;margin-bottom:.2rem}
 .leader .role{color:var(--accent);font-weight:700;margin-bottom:1rem;font-family:'Plus Jakarta Sans'}
 .leader .contacts{display:flex;flex-wrap:wrap;gap:10px;margin:1rem 0 1.4rem}
-.leader .contacts a{font-size:.85rem;background:var(--soft);border:1px solid var(--line);padding:.4rem .8rem;border-radius:50px;font-weight:600;color:var(--ink2)}
+.leader .contacts a{font-size:.85rem;background:var(--soft);border:1px solid var(--line);padding:.4rem .8rem;border-radius:50px;font-weight:600;color:var(--ink2);display:inline-flex;align-items:center;gap:6px}
+.leader .contacts a svg{width:15px;height:15px;flex:none;fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .pill{display:inline-block;background:var(--soft2);color:var(--ink2);font-weight:700;font-size:.75rem;
   padding:.3rem .7rem;border-radius:50px;margin:0 .4rem .4rem 0}
 /* Careers */
