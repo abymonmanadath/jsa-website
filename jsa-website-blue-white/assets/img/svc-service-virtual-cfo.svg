@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#0b2a4a"/><stop offset=".6" stop-color="#123a63"/><stop offset="1" stop-color="#1466b8"/>
+</linearGradient>
+<radialGradient id="glow" cx=".78" cy=".22" r=".7">
+<stop offset="0" stop-color="#1f83e0" stop-opacity=".45"/><stop offset="1" stop-color="#1f83e0" stop-opacity="0"/>
+</radialGradient>
+</defs>
+<rect width="520" height="360" fill="url(#g)"/>
+<rect width="520" height="360" fill="url(#glow)"/>
+<g fill="none" stroke="#ffffff" stroke-opacity=".07" stroke-width="2">
+<circle cx="440" cy="70" r="120"/><circle cx="440" cy="70" r="80"/><circle cx="60" cy="330" r="90"/>
+</g>
+<rect x="200" y="70" width="120" height="120" rx="26" fill="#ffffff" fill-opacity=".1" stroke="#1f83e0" stroke-opacity=".5"/>
+<g transform="translate(229.0,99.0) scale(2.583)" opacity="1.0"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" fill="none" stroke="#4aa3f0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="260" y="300" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="21" font-weight="700" fill="#ffffff"><tspan x="260" dy="0">Virtual CFO Services</tspan></text>
+</svg>
