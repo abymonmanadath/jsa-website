@@ -2,7 +2,14 @@ Photos/
 Firm Details/
 .DS_Store
 *.zip
+generate.py
+replica.py
+_docimg/
+_media/
+jsa-preview/
+jsa-site/
 jsa-website-final/
+jsa-website-github/
 jsa-website-navy-gold/
 jsa-website-teal-slate/
 jsa-website-blue-white/
