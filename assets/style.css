@@ -165,9 +165,10 @@ footer p{font-size:.9rem;color:#a4b6c4;margin-top:12px}
 header.site.classic{position:static;box-shadow:none}
 .headrow{display:flex;align-items:center;justify-content:space-between;gap:26px;padding:16px 0}
 .headrow .brand{align-items:center}
-.brand .txt b .amp{color:var(--teal);font-size:1em}
+.brand .txt b .amp{color:#e5672a;font-size:1em;font-weight:700}
+.site.classic .brand .txt b .amp{color:#e5672a}
 .site.classic .brand .txt b{font-size:1.2rem;line-height:1.15}
-.site.classic .brand .txt span{color:var(--navy);font-size:.92rem;letter-spacing:1.4px;margin-top:1px}
+.site.classic .brand .txt span{color:var(--navy);font-family:'Poppins','Open Sans',sans-serif;font-weight:600;font-size:.9rem;letter-spacing:0;margin-top:1px}
 .headrow .addr,.headrow .ph{font-size:.92rem;color:var(--ink);line-height:1.55}
 .headrow .addr b,.headrow .ph b{color:var(--navy);font-weight:700}
 .headrow .ph a{color:var(--ink)}.headrow .ph a:hover{color:var(--teal)}
