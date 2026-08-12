@@ -60,8 +60,18 @@ document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>m
 var t=document.getElementById('topBtn');window.addEventListener('scroll',()=>{t.classList.toggle('show',scrollY>500)});
 t&&t.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
 var sl=document.querySelectorAll('.slide'),dt=document.querySelectorAll('.dots button'),i=0;
-if(sl.length){var go=n=>{sl.forEach(s=>s.classList.remove('act'));dt.forEach(d=>d.classList.remove('on'));
-sl[n].classList.add('act');dt[n]&&dt[n].classList.add('on');i=n};
-dt.forEach((d,n)=>d.addEventListener('click',()=>go(n)));setInterval(()=>go((i+1)%sl.length),5000);}
+if(sl.length){
+var go=function(n){
+if(n===i)return;
+var out=sl[i],inc=sl[n];
+inc.style.transition='none';inc.style.transform='translateX(100%)';void inc.offsetWidth;inc.style.transition='';
+out.style.transform='translateX(-100%)';inc.style.transform='translateX(0)';
+sl.forEach(function(s){s.classList.remove('act')});inc.classList.add('act');
+dt.forEach(function(d){d.classList.remove('on')});if(dt[n])dt[n].classList.add('on');
+i=n;
+};
+dt.forEach(function(d,n){d.addEventListener('click',function(){go(n)})});
+setInterval(function(){go((i+1)%sl.length)},5000);
+}
 })();
 </script></body></html>
