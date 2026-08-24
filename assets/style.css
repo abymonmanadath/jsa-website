@@ -78,7 +78,7 @@ header.site{background:#fff;border-bottom:1px solid var(--line);position:sticky;
 .card .rm{color:var(--teal);font-weight:700;font-size:.85rem}
 .card .rm::after{content:' →'}
 /* page banner */
-.banner{background:linear-gradient(90deg,var(--navy),var(--navy2));color:#fff;padding:52px 0}
+.banner{background:linear-gradient(90deg,var(--navy),var(--navy2));color:#fff;padding:32px 0}
 .banner h1{color:#fff;font-size:2.1rem}
 .crumb{color:#bcd0df;font-size:.9rem;margin-top:6px}
 .crumb a{color:#bcd0df}.crumb a:hover{color:#fff}
