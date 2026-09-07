@@ -1,0 +1,83 @@
+# Jolly Stephen & Associates — static site
+# Every block is wrapped in <IfModule> so a module the server does not
+# have is skipped rather than causing a 500.
+
+# ---------------------------------------------------------------------------
+# Canonical URLs: force HTTPS and strip www
+# The site's canonical tags and sitemap all use https://jollystephenassociates.com
+# (no www), so these redirects keep the served URL matching them.
+#
+# NOTE: while testing on Hostinger's temporary preview URL before DNS is
+# switched, comment out this whole block if it interferes.
+# ---------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # http -> https
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # www -> non-www
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# 301 redirects from the old WordPress URLs
+# Add one line per old URL that Google still has indexed, so the ranking
+# carries over instead of landing on a 404. Get the list from Search Console
+# (Indexing > Pages) once it is set up. Example:
+#
+#   Redirect 301 /audit-and-assurance/ https://jollystephenassociates.com/service-audit-assurance.html
+#   Redirect 301 /about-us/            https://jollystephenassociates.com/about.html
+# ---------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------
+# Compression
+# ---------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/xml application/xhtml+xml
+  AddOutputFilterByType DEFLATE image/svg+xml application/rss+xml
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Browser caching. Images and CSS are fingerprint-free, so HTML is kept
+# uncached to make sure content edits appear immediately.
+# ---------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault                      "access plus 1 month"
+  ExpiresByType text/html             "access plus 0 seconds"
+  ExpiresByType text/xml              "access plus 0 seconds"
+  ExpiresByType text/css              "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/jpeg            "access plus 1 year"
+  ExpiresByType image/png             "access plus 1 year"
+  ExpiresByType image/svg+xml         "access plus 1 year"
+  ExpiresByType image/x-icon          "access plus 1 year"
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Security headers. HSTS is deliberately omitted until SSL is confirmed
+# working — it is hard to undo if the certificate has problems.
+# ---------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Misc
+# ---------------------------------------------------------------------------
+Options -Indexes
+DirectoryIndex index.html
+
+<IfModule mod_mime.c>
+  AddType image/svg+xml .svg
+  AddType image/x-icon  .ico
+</IfModule>
