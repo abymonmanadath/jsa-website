@@ -50,6 +50,8 @@ header.site{background:#fff;border-bottom:1px solid var(--line);position:sticky;
 .slide p{color:#dfe8ef;font-size:1.05rem;margin-bottom:26px;max-width:520px}
 .dots{position:absolute;bottom:26px;left:0;right:0;z-index:3;display:flex;justify-content:center;gap:10px}
 .dots button{width:12px;height:12px;border-radius:50%;border:2px solid #fff;background:transparent;cursor:pointer;padding:0}
+.dots button{position:relative}
+.dots button::after{content:"";position:absolute;inset:-9px;border-radius:50%}
 .dots button.on{background:var(--teal2);border-color:var(--teal2)}
 /* strip */
 .strip{background:var(--teal);color:#fff}
@@ -221,4 +223,5 @@ header.site.classic{position:static;box-shadow:none}
 
  .sec{padding:48px 0}.svc-grid,.strip .wrap,.gal,.posts,.info,.fg,.fgrid,.slist,.exp{grid-template-columns:1fr;columns:1}
  .top .l{display:none}.hero{height:70vh;min-height:460px}
+ .dots{gap:20px}
 }
