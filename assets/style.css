@@ -131,6 +131,7 @@ aside .box h2,aside .box h4{background:var(--navy);color:#fff;padding:14px 18px;
 .news-item .imgs.n2{grid-template-columns:1fr 1fr}
 .news-item .imgs.n3{grid-template-columns:repeat(3,1fr)}
 .news-item .imgs.n4{grid-template-columns:1fr 1fr}
+.news-item .imgs.n8{grid-template-columns:repeat(4,1fr)}
 .news-item .imgs a{overflow:hidden;aspect-ratio:4/3}
 .news-item .imgs.n1 a{aspect-ratio:16/9}
 .news-item .imgs img{width:100%;height:100%;object-fit:cover;transition:.4s}
@@ -140,7 +141,11 @@ aside .box h2,aside .box h4{background:var(--navy);color:#fff;padding:14px 18px;
 .news-item h3{font-size:1.25rem;margin:6px 0 12px;line-height:1.3}
 .news-item .bd p{color:var(--ink);font-size:.96rem;margin-bottom:12px;line-height:1.7}
 .news-item .bd p:last-child{margin-bottom:0}
-@media(max-width:620px){.news-item .imgs.n3,.news-item .imgs.n4{grid-template-columns:1fr 1fr}}
+.news-item .sess{list-style:none;margin:0 0 12px;padding-left:2px}
+.news-item .sess li{position:relative;padding-left:20px;margin-bottom:7px;font-size:.96rem}
+.news-item .sess li::before{content:'';position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:2px;background:var(--teal)}
+.news-item .sess b{color:var(--navy)}
+@media(max-width:620px){.news-item .imgs.n3,.news-item .imgs.n4,.news-item .imgs.n8{grid-template-columns:1fr 1fr}}
 .jobs{display:grid;gap:18px}
 .job{border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:24px 26px;display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}
 .job h3{font-size:1.15rem}.job .tags span{display:inline-block;font-size:.75rem;background:var(--soft);border:1px solid var(--line);padding:.2rem .6rem;border-radius:20px;margin:6px 6px 0 0;color:var(--muted)}
@@ -225,3 +230,15 @@ header.site.classic{position:static;box-shadow:none}
  .top .l{display:none}.hero{height:70vh;min-height:460px}
  .dots{gap:20px}
 }
+
+/* Team */
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:26px 22px}
+.team .mem{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;
+  box-shadow:0 8px 20px rgba(15,51,85,.07);transition:.25s}
+.team .mem:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(15,51,85,.14)}
+.team .mem .ph{aspect-ratio:3/4;overflow:hidden;background:var(--soft)}
+.team .mem .ph img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:.4s}
+.team .mem:hover .ph img{transform:scale(1.05)}
+.team .mem h3{font-size:1rem;padding:14px 12px;text-align:center;border-top:3px solid var(--teal)}
+@media(max-width:920px){.team{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.team{grid-template-columns:repeat(2,1fr);gap:18px 14px}}
